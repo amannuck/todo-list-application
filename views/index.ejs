@@ -1,0 +1,58 @@
+<!-- Header -->
+<%- include("partials/header.ejs") %>
+    <div class="container">
+        <div class="current-date">
+            <%= locals.formattedDate %>
+        </div>
+        <div class="task-list">
+            <table class="task-list-table">
+                <th>
+                    <h1 style="color: #432818;;">Today's Tasks:</h1>
+                </th>
+                <% for (let i=0; i<locals.taskArray.length; i++) { %>
+                    <tr>
+                        <td>
+                            <input class="task-checkbox" name="task-checkbox" type="checkbox">
+                            <label class="label-task" for="task-checkbox">
+                                <%= taskArray[i] %>
+                            </label>
+                        </td>
+                    </tr>
+                    <% } %>
+
+                        <% for (let i=0; i< 6-locals.taskArray.length; i++) { %>
+                            <tr>
+                                <td>
+                                    <input class="task-checkbox" name="task-checkbox" type="checkbox">
+                                    <label class="label-task" for="task-checkbox">Task <%= i + 1 %></label>
+                                </td>
+                            </tr>
+                            <% } %>
+                                <tr>
+                                    <td class="input-tasks" colspan="2">
+                                        <form class="task-form" action="/" method="POST">
+                                            <input type="text"name="item" class="input-label"
+                                                placeholder="Add a new item" autocomplete="off">
+                                            <input type="submit" class="submit-button" name="submit">
+                                        </form>
+                                    </td>
+                                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include("partials/footer.ejs") %>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const checkboxes = document.querySelectorAll("input[type='checkbox']");
+
+                checkboxes.forEach((checkbox) => {
+                    checkbox.addEventListener("change", function () {
+                        const label = this.nextElementSibling; // Assuming the label immediately follows the checkbox
+                        label.classList.toggle("strikethrough", this.checked);
+                    });
+                });
+            });
+        </script>

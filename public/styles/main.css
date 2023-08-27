@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5ebe0;
+    font-family: 'Noto Serif', serif;
+}
+
+.current-date {
+    text-align: center;
+    font-size: 30px;
+    background-color: #e3d5ca;
+    padding: 30px;
+}
+
+.task-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin: 10px;
+}
+
+.task-list-table {
+    border-collapse: collapse;
+}
+
+
+td {
+    width: 50vh;
+    padding: 10px;
+    border-bottom: 1px solid #ccc5b9;
+}
+
+.input-tasks {
+    border-bottom: none;
+}
+
+
+.task-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+border-color: #403d39;
+width: 20px;
+height: 20px;
+border: 2px solid #ccc;
+background-color: white;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+}
+
+.task-checkbox:checked {
+    border-color: #d5bdaf;
+    background-color: #d5bdaf;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.label-task {
+    margin-left: 10px;
+}
+
+
+
+
+
+.input-label {
+    height: 40px;
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+
+
+.submit-button {
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+
+footer {
+    text-align: center;
+    padding: 5px;
+    margin-top: auto; 
+}
